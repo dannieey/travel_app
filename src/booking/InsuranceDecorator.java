@@ -1,18 +1,19 @@
 package booking;
 
-public class InsuranceDecorator implements Booking{
-    private Booking booking;
-    private double insuranceCoat=50;
-    public InsuranceDecorator(Booking booking) {
-        this.booking = booking;
-    }
-    @Override
-    public String getDescription() {
-        return booking.getDescription()+" +Insurance";
+public class InsuranceDecorator extends BookingDecorator {
+    private double insuranceCost = 15.0;
+
+    public InsuranceDecorator(Booking wrapped) {
+        super(wrapped);
     }
 
     @Override
-    public double getCost() {
-        return booking.getCost()+insuranceCoat;
+    public String getDescription() {
+        return wrapped.getDescription() + " + Insurance";
+    }
+
+    @Override
+    public double getPrice() {
+        return wrapped.getPrice() + insuranceCost;
     }
 }

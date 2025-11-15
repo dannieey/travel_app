@@ -1,7 +1,7 @@
 package transport;
 
 public interface Transport {
-    double getCost();
-    String getDescription();
-}
+    String getName();
+    double getBasePrice();
 
+}

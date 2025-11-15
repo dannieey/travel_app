@@ -1,21 +1,21 @@
 package transport;
 
 public class Car implements Transport {
-    private String model;
-    private double distanceKm;
+    private double basePrice;
 
-    public Car(String model, double distanceKm) {
-        this.model = model;
-        this.distanceKm = distanceKm;
-    }
-    @Override
-    public double getCost() {
-        double fuelPrice=1.2;
-        return distanceKm*fuelPrice;
+    public Car(double basePrice) {
+        this.basePrice = basePrice;
     }
 
     @Override
-    public String getDescription() {
-        return "Car"+model+" for " + distanceKm+"km";
+    public String getName() {
+        return "Car";
     }
+
+    @Override
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+
 }

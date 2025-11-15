@@ -1,21 +1,21 @@
 package transport;
 
 public class Plane implements Transport {
-    private String airline;
-    private String seatClass;
+    private double basePrice;
 
-    public Plane(String airLine, String seatClass) {
-        this.airline = airline;
-        this.seatClass = seatClass;
+    public Plane(double basePrice) {
+        this.basePrice = basePrice;
     }
 
     @Override
-    public double getCost() {
-        return seatClass.equals("Econimy")?200:500;
+    public String getName() {
+        return "Plane";
     }
 
     @Override
-    public String getDescription() {
-        return airline +"Plane (" + seatClass + ")";
+    public double getBasePrice() {
+        return basePrice;
     }
+
+
 }

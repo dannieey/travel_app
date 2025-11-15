@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TravelApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>TravelApp</h1>
+  <form id="travelForm">
+    <label>Name (for notifications):</label>
+    <input type="text" id="userName" required>
+
+    <label>Departure from:</label>
+    <input type="text" id="origin" required>
+
+    <label>Destination:</label>
+    <input type="text" id="destination" required>
+
+    <label>Transport:</label>
+    <select id="transport" required>
+      <option value="plane">Plane</option>
+      <option value="car">Car</option>
+      <option value="cruise">Cruise</option>
+    </select>
+
+    <div id="seatClassDiv">
+      <label>Seat class (plane only):</label>
+      <select id="seatClass">
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+      </select>
+    </div>
+
+    <label>Departure date (dd-mm-yyyy):</label>
+    <input type="text" id="dateTo" placeholder="dd-mm-yyyy" required>
+
+    <label>Return date (optional, dd-mm-yyyy):</label>
+    <input type="text" id="dateBack" placeholder="dd-mm-yyyy">
+
+    <label>Add meal option?</label>
+    <select id="meal">
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+    </select>
+
+    <label>Add insurance?</label>
+    <select id="insurance">
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+    </select>
+
+    <label>Travel Mood:</label>
+    <select id="mood" required>
+      <option value="relaxation">Relaxation</option>
+      <option value="adrenaline">Adrenaline</option>
+      <option value="romance">Romance</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="modifyStopsDiv" class="hidden">
+    <p>Do you want to modify planned stops? (comma-separated)</p>
+    <input type="text" id="modifyStopsInput">
+    <button id="modifyStopsBtn">Update Trip</button>
+  </div>
+
+  <div id="result" class="hidden"></div>
+  <div id="priceAlert" class="hidden"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

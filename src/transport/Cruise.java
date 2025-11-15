@@ -1,19 +1,21 @@
 package transport;
 
-public class Cruise implements Transport{
-    private String shipName;
-    private int durationDays;
-    public Cruise(String shipName, int durationDays) {
-        this.shipName = shipName;
-        this.durationDays = durationDays;
-    }
-    @Override
-    public double getCost() {
-        return durationDays*100;
+public class Cruise implements Transport {
+    private double basePrice;
+
+    public Cruise(double basePrice) {
+        this.basePrice = basePrice;
     }
 
     @Override
-    public String getDescription() {
-        return "Cruise "+shipName+"for " +durationDays+" days";
+    public String getName() {
+        return "Cruise";
     }
+
+    @Override
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+
 }
